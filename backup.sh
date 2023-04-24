@@ -16,10 +16,11 @@ FILENAME=$( basename "$1" )
 tar -czvf $BCKDEST/$FILENAME-$(date +%Y-%m-%d_%H-%M-%S).tar.gz $1
 
 ## checking if the previous action is successful or not
+
 if [ $? -eq 0 ] 
 then
-   echo " Archiving Successful"
+   echo " Archiving Successful. $1 directory has been compressed and backed up in $BCKDEST directory"
 else
-   echo "Archiving failed"
+   echo "Archiving failed. Sorry the backup has been intrupted. Please try again.  "
 
 fi
